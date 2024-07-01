@@ -39,8 +39,8 @@ class Editer(object):
         self.main_page = f'{self.url_head}/novel/{book_no}.html'
         self.cata_page = f'{self.url_head}/novel/{book_no}/catalog'
         self.read_tool_page = f'{self.url_head}/themes/zhmb/js/readtool.js'
-        self.color_chap_name = '插图'
-        self.color_page_name = '彩页'
+        self.color_chap_name = '插圖'
+        self.color_page_name = '彩頁'
         self.html_buffer = dict()
         
         main_html = self.get_html(self.main_page)
@@ -48,7 +48,7 @@ class Editer(object):
         self.title = bf.find('meta', {"property": "og:novel:book_name"})['content']
         self.author = bf.find('meta', {"property": "og:novel:author"})['content']
         try:
-            self.cover_url = re.search(r'src=\"(.*?)\"', str(bf.find('div', {"class": "book-img fl"}))).group(1)
+            self.cover_url = re.search(r'src=\"(.*?)\"', str(bf.find('div', {"class": "module-item-cover"}))).group(1)
         except:
             self.cover_url = 'cid'
             
@@ -74,8 +74,7 @@ class Editer(object):
             time.sleep(0.5)
             self.driver.get(url)
             req = self.driver.page_source
-            # TODO
-            while '<title>Access denied | www.linovelib.com used Cloudflare to restrict access</title>' in req:
+            while '<title>Access denied | tw.linovelib.com used Cloudflare to restrict access</title>' in req:
                 time.sleep(5)
                 self.driver.get(url)
                 req = self.driver.page_source
@@ -133,7 +132,7 @@ class Editer(object):
 
     def get_page_text(self, content_html):
         bf = BeautifulSoup(content_html, 'html.parser')
-        text_with_head = bf.find('div', {'id': 'TextContent', 'class': 'read-content'}) 
+        text_with_head = bf.find('div', {'id': 'acontent1', 'class': 'acontent'}) 
         text_html = str(text_with_head)
         img_urlre_list = re.findall(r"<img .*?>", text_html)
         for img_urlre in img_urlre_list:
@@ -176,7 +175,11 @@ class Editer(object):
                 url = self.url_head + url_new
             else:
                 if return_next_chapter:
-                    next_chap_url = self.url_head + re.search(r'书签</a><a href="(.*?)">下一章</a>', content_html).group(1)
+                    # tw version use dynamic js onclick="window.location.href = ReadParams.url_next; to handle
+                    # so leave blank for now, fix when we meet an error in the future
+                    # next_chap_url = self.url_head + re.search(r'书签</a><a href="(.*?)">下一章</a>', content_html).group(1)
+                    print("we need to return next chapter, but hasn't implement yet")
+                    print("FIIXXX IT!!!!")
                 break
         return text_chap, next_chap_url
     
