@@ -18,6 +18,7 @@ from concurrent.futures import ThreadPoolExecutor, wait
 import pickle
 from selenium import webdriver
 from selenium.webdriver.edge.options import Options
+from selenium.webdriver.common.by import By
 
 lock = threading.RLock()
 
@@ -180,11 +181,10 @@ class Editer(object):
                 url = self.url_head + url_new
             else:
                 if return_next_chapter:
-                    # tw version use dynamic js onclick="window.location.href = ReadParams.url_next; to handle
-                    # so leave blank for now, fix when we meet an error in the future
-                    # next_chap_url = self.url_head + re.search(r'书签</a><a href="(.*?)">下一章</a>', content_html).group(1)
-                    print("we need to return next chapter, but hasn't implement yet")
-                    print("FIIXXX IT!!!!")
+                    self.driver.get(url)
+                    partial_next_url = self.driver.execute_script("return ReadParams.url_next;")
+                    next_chap_url = self.url_head + partial_next_url
+                    print(f"next url of {url} is {next_chap_url}")
                 break
         return text_chap, next_chap_url
     
@@ -290,9 +290,11 @@ class Editer(object):
         return ('javascript' in url or 'cid' in url)   
     
     def get_prev_url(self, chap_no): #获取前一个章节的链接
-        content_html = self.get_html(self.volume['chap_urls'][chap_no], is_gbk=False)
-        next_url = self.url_head + re.search(r'<div class="mlfy_page"><a href="(.*?)">上一章</a>', content_html).group(1)
-        return next_url
+        self.driver.get(self.volume['chap_urls'][chap_no])
+        partial_previous_url = self.driver.execute_script("return ReadParams.url_previous;")
+        previous_chap_url = self.url_head + partial_previous_url
+        print(f"previous url of {self.volume['chap_urls'][chap_no]} is {previous_chap_url}")
+        return previous_chap_url
     
     def prev_fix_url(self, chap_no, chap_num):  #反向递归修复缺失链接（后修复前），若成功修复返回True，否则返回False 
         if chap_no==chap_num-1: #最后一个章节直接选择不修复 返回False
