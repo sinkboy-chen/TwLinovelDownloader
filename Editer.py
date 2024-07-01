@@ -122,10 +122,10 @@ class Editer(object):
     def get_chap_list(self, is_print=True):
         cata_html = self.get_html(self.cata_page, is_gbk=False)
         bf = BeautifulSoup(cata_html, 'html.parser')
-        chap_html_list = bf.find_all('div', {'class', 'volume clearfix'})
+        chap_html_list = bf.find_all('div', {'class', 'catalog-volume'})
         if is_print:
             for chap_no, chap_html in enumerate(chap_html_list):
-                print(f'[{chap_no+1}]', chap_html.find('h2', {'class': 'v-line'}).text)
+                print(f'[{chap_no+1}]', chap_html.find('h3').text)
             return
         else:
             return chap_html_list
