@@ -112,8 +112,8 @@ class Editer(object):
         volume_array = self.volume_no - 1
         chap_html = chap_html_list[volume_array]
 
-        self.volume['book_name'] = chap_html.find('h2', {'class': 'v-line'}).text
-        chap_list = chap_html.find_all('li', {'class', 'col-4'})
+        self.volume['book_name'] = chap_html.find('h3').text
+        chap_list = chap_html.find_all('li', {'class', 'chapter-li jsChapter'})
         for chap_html in chap_list:
             self.volume['chap_names'].append(chap_html.text)
             self.volume['chap_urls'].append(self.url_head + chap_html.find('a').get('href'))
