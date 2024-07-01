@@ -95,15 +95,12 @@ class SettingWidget(QFrame):
             parent=self.parent
         )
 
-        self.language_card = OptionsSettingCard(
-            self.toTraditionalChineseMode,
+        self.to_traditional_chinese_card = SwitchSettingCard(
             FIF.LANGUAGE,
-            self.tr('輸出語言'),
-            self.tr("更改語言"),
-            texts=[
-                self.tr('繁體中文'), self.tr('简体中文')
-            ],
-            parent=self.parent
+            self.tr('翻譯成繁體'),
+            self.tr("工具"),
+            self.toTraditionalChineseMode,
+            self.parent
         )
 
         self.confirm_no_img_card = SwitchSettingCard(
@@ -116,7 +113,7 @@ class SettingWidget(QFrame):
 
         self.setting_group.addSettingCard(self.download_path_card)
         self.setting_group.addSettingCard(self.theme_card)
-        self.setting_group.addSettingCard(self.language_card)
+        self.setting_group.addSettingCard(self.to_traditional_chinese_card)
         self.setting_group.addSettingCard(self.confirm_no_img_card)
         self.expandLayout.setSpacing(28)
         self.expandLayout.setContentsMargins(20, 10, 20, 0)
@@ -124,7 +121,7 @@ class SettingWidget(QFrame):
 
         self.download_path_card.clicked.connect(self.download_path_changed)
         self.theme_card.optionChanged.connect(self.theme_changed)
-        self.language_card.optionChanged.connect(self.language_changed)
+        self.to_traditional_chinese_card.checkedChanged.connect(self.to_traditional_chinese_changed)
         self.confirm_no_img_card.checkedChanged.connect(self.confirm_no_img_changed)
 
     def download_path_changed(self):
@@ -140,14 +137,14 @@ class SettingWidget(QFrame):
         if os.path.exists('./config'):
             shutil.rmtree('./config')
 
-    def language_changed(self):
-        language = self.language_card.choiceLabel.text()
-        if language=="繁體中文":
+    def to_traditional_chinese_changed(self):
+        to_traditional_chinese = self.to_traditional_chinese_card.isChecked()
+        if to_traditional_chinese:
             self.parent.to_traditional_chinese = True
-            print("輸出設定成繁體中文，若需更改請至設定頁面")
+            print("繁體翻譯工具已開啟")
         else:
             self.parent.to_traditional_chinese = False
-            print("输出设定成简体中文，若需更改请至设定页面")
+            print("繁體翻譯工具已關閉")
         self.parent.save_config_to_traditional_chinese(self.parent.to_traditional_chinese)
 
     def confirm_no_img_changed(self):
