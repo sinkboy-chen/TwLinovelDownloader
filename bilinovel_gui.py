@@ -45,8 +45,8 @@ class MainThread(QThread):
             self.parent.end_signal.emit('')
         except Exception as e:
             self.parent.end_signal.emit('')
-            print('错误，请检查网络情况或确认输入是否正确')
-            print('错误信息：')
+            print('錯誤，請檢查網路狀況或確認輸入是否正確')
+            print('錯誤訊息:')
             print(e)
     def terminate(self) -> None:
         result = super().terminate()
@@ -68,12 +68,12 @@ class SettingWidget(QFrame):
         self.parent = parent
         self.expandLayout = ExpandLayout(self)
         self.setObjectName(text.replace(' ', '-'))
-        self.setting_group = SettingCardGroup(self.tr("下载设置"), self)
+        self.setting_group = SettingCardGroup(self.tr("下載設定"), self)
         
         self.download_path_card = PushSettingCard(
-            self.tr('选择文件夹'),
+            self.tr('選擇資料夾'),
             FIF.DOWNLOAD,
-            self.tr("下载目录"),
+            self.tr("下載位置"),
             self.parent.out_path,
             self.setting_group
         )
@@ -95,11 +95,11 @@ class SettingWidget(QFrame):
         self.theme_card = OptionsSettingCard(
             self.themeMode,
             FIF.BRUSH,
-            self.tr('应用主题'),
-            self.tr("更改外观"),
+            self.tr('應用主題'),
+            self.tr("更改外觀"),
             texts=[
                 self.tr('亮'), self.tr('暗'),
-                self.tr('跟随系统设置')
+                self.tr('跟隨系統設定')
             ],
             parent=self.parent
         )
@@ -123,8 +123,8 @@ class SettingWidget(QFrame):
 
         self.confirm_no_img_card = SwitchSettingCard(
             FIF.ADD_TO,
-            self.tr('插图页面不存在时'),
-            self.tr("手动新增插图页面"),
+            self.tr('插圖頁面不存在時'),
+            self.tr("手動新增插圖頁面"),
             self.confirmNoImgMode,
             self.parent
         )
@@ -189,8 +189,8 @@ class HomeWidget(QFrame):
         super().__init__(parent=parent)
         self.setObjectName(text)
         self.parent = parent
-        self.label_book = SubtitleLabel('书号：', self)
-        self.label_volumn = SubtitleLabel('卷号：', self)
+        self.label_book = SubtitleLabel('書號：', self)
+        self.label_volumn = SubtitleLabel('卷號：', self)
         self.editline_book = LineEdit(self) 
         self.editline_volumn = LineEdit(self) 
         validator = QRegExpValidator(QRegExp("\\d+"))  # 正则表达式匹配阿拉伯数字
@@ -219,10 +219,10 @@ class HomeWidget(QFrame):
         self.progressRing.setTextVisible(True)
         self.progressRing.setFixedSize(50, 50)
         
-        self.btn_run = PushButton('确定', self)
+        self.btn_run = PushButton('確定', self)
         self.btn_run.setShortcut(Qt.Key_Return)
         self.btn_stop = PushButton('取消', self)
-        self.btn_hang = PushButton('确定', self)
+        self.btn_hang = PushButton('確定', self)
         
         self.editline_hang = EditableComboBox(self)
         self.gridLayout = QGridLayout(self)
@@ -285,14 +285,14 @@ class HomeWidget(QFrame):
         self.label_cover.setImage(self.book_icon)
         self.label_cover.setFixedSize(self.cover_w, self.cover_h)
         self.btn_run.setEnabled(False)
-        self.btn_run.setText('正在下载')
+        self.btn_run.setText('正在下載')
         self.btn_stop.setEnabled(True)
         self.main_thread = MainThread(self)
         self.main_thread.start()
         
     def process_end(self, input=None):
         self.btn_run.setEnabled(True)
-        self.btn_run.setText('开始下载')
+        self.btn_run.setText('開始下載')
         self.btn_run.setShortcut(Qt.Key_Return)
         self.btn_stop.setEnabled(False)
         self.progressRing.hide()
@@ -363,6 +363,7 @@ class Window(FluentWindow):
         self.confirm_no_img = self.get_config_confirm_no_img()
         self.output_file_type = self.get_config_output_file_type()
         split_str = '**************************************\n    '
+        # TODO
         self.welcome_text = f'使用说明（共5条，记得下拉）：\n{split_str}1.哔哩轻小说{self.head}，根据书籍网址输入书号以及下载的卷号，书号最多输入4位阿拉伯数字。\n{split_str}2.例如小说网址是{self.head}/novel/2704.html，则书号输入2704。\n{split_str}3.要查询书籍卷号卷名等信息，则可以只输入书号不输入卷号，点击确定会返回书籍卷名称和对应的卷号。\n{split_str}4.根据上一步返回的信息确定自己想下载的卷号，要下载编号[2]对应卷，则卷号输入2。想下载多卷比如[1]至[3]对应卷，则卷号输入1-3或1,2,3（英文逗号分隔，编号也可以不连续）并点击确定。\n{split_str}5.若需更改.epub 输出语言请至设定页面，目前输出为{"繁體中文" if self.to_traditional_chinese else "简体中文"}。\n'
         self.homeInterface = HomeWidget('Home Interface', self)
         self.settingInterface = SettingWidget('Setting Interface', self)
@@ -520,15 +521,15 @@ class Window(FluentWindow):
             config.write(configfile)
 
     def initNavigation(self):
-        self.addSubInterface(self.homeInterface, FIF.HOME, '主界面')
-        self.addSubInterface(self.settingInterface, FIF.SETTING, '设置', NavigationItemPosition.BOTTOM)
+        self.addSubInterface(self.homeInterface, FIF.HOME, '主介面')
+        self.addSubInterface(self.settingInterface, FIF.SETTING, '設定', NavigationItemPosition.BOTTOM)
 
     def initWindow(self):
         self.resize(700, 460)
         pixmap = QPixmap()
         pixmap.loadFromData(base64.b64decode(logo_base64))
         self.setWindowIcon(QIcon(pixmap))
-        self.setWindowTitle('哔哩轻小说EPUB下载器')
+        self.setWindowTitle('嗶哩輕小說EPUB下載器')
         self.setFont(font_label)
 
         desktop = QApplication.desktop().availableGeometry()
@@ -540,7 +541,7 @@ class Window(FluentWindow):
             setTheme(Theme.LIGHT)
         elif mode=='暗':
             setTheme(Theme.DARK)
-        elif mode=='跟随系统设置':
+        elif mode=='跟隨系統設定':
             setTheme(Theme.AUTO)
         theme = qconfig.theme
         if theme == Theme.DARK:

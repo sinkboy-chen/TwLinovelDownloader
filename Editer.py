@@ -114,7 +114,7 @@ class Editer(object):
         self.volume['chap_names'] = []
         chap_html_list = self.get_chap_list(is_print=False)
         if len(chap_html_list)<self.volume_no:
-            print('输入卷号超过实际卷数！')
+            print('輸入卷號超過實際卷數！')
             return False
         volume_array = self.volume_no - 1
         chap_html = chap_html_list[volume_array]
@@ -172,7 +172,7 @@ class Editer(object):
             if page_no == 1:
                 str_out = chap_name
             else:
-                str_out = f'    正在下载第{page_no}页......'
+                str_out = f'    正在下載第{page_no}頁......'
             print(str_out)
             content_html = self.get_html(url, is_gbk=False)
             text = self.get_page_text(content_html)
@@ -257,7 +257,7 @@ class Editer(object):
                 signal.emit(signal_msg)
         except Exception as e:
             print(e)
-            print('没有封面图片，请自行用第三方EPUB编辑器手动添加封面')
+            print('沒有封面圖片，請自行用第三方EPUB編輯器手動新增封面')
         img_htmls = get_cover_html(img_w, img_h)
         with open(textfile, 'w+', encoding='utf-8') as f:
             f.writelines(img_htmls)
@@ -285,7 +285,7 @@ class Editer(object):
             self.is_color_page = False
             self.img_url_map[self.cover_url] = str(len(self.img_url_map)).zfill(2)
             print('**************')
-            print('提示：没有彩页，但主页封面存在，将使用主页的封面图片作为本卷图书封面')
+            print('提示：沒有彩頁，但主頁封面存在，將使用主頁的封面圖片作為本卷圖書封面')
             print('**************')
     
     def check_url(self, url):#当检测有问题返回True
@@ -325,16 +325,16 @@ class Editer(object):
         return content
             
     def hand_in_url(self, chap_name, is_gui=False, signal=None, editline=None):
-        error_msg = f'章节\"{chap_name}\"连接失效，请手动输入该章节链接(手机版“{self.url_head}”开头的链接):'
+        error_msg = f'章節\"{chap_name}\"連結失效，請手動輸入該章節連結(手機版“{self.url_head}”開頭的連結):'
         return self.hand_in_msg(error_msg, is_gui, signal, editline)
     
     def hand_in_color_page_name(self, is_gui=False, signal=None, editline=None):
         if is_gui:
-            error_msg = f'插图页面不存在，需要下拉选择插图页标题，若不需要插图页则保持本栏为空直接点确定：'
+            error_msg = f'插圖頁面不存在，需要下拉選擇插圖頁標題，若不需要插圖頁則保持本欄為空直接點確定：'
             editline.addItems(self.volume['chap_names'])
             editline.setCurrentIndex(-1)
         else:
-            error_msg = f'插图页面不存在，需要手动输入插图页标题，若不需要插图页则不输入直接回车：'
+            error_msg = f'插圖頁面不存在，需要手動輸入插圖頁標題，若不需要插圖頁則不輸入直接 enter：'
         return self.hand_in_msg(error_msg, is_gui, signal, editline) 
     
     def get_toc(self):

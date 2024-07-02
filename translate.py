@@ -58,7 +58,7 @@ def translate_epub_with_path(epub_path):
     filename = path.name
 
     if not path.suffix == ".epub":
-        print(f"跳過 {epub_path} 因為此非 .epub 檔案")
+        print(f"跳過翻譯 {epub_path} 因為此非 epub 檔案")
         return 0, None
     elif filename == s2t(filename):
         output_fn = epub_path[:-5] + '-tc.epub'
@@ -66,11 +66,11 @@ def translate_epub_with_path(epub_path):
         output_fn = s2t(filename)
 
     t = time.time()
-    print(f"正在翻譯成繁體 {epub_path}")
+    print(f"正在翻譯成繁體 {epub_path}......")
     buffer = BytesIO()
     output = convert_epub(epub_path, buffer)
     with open(Path.joinpath(directory, output_fn), "wb") as f:
         f.write(buffer.getvalue())
-    print(f"翻譯成功！ {output_fn}")
+    print(f"翻譯成功 路徑【{Path.joinpath(directory, output_fn)}】")
     print(f"翻譯耗時: {round(time.time() - t, 2)}s")
     return 1, Path.joinpath(directory, output_fn)
