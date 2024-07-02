@@ -146,6 +146,8 @@ class SettingWidget(QFrame):
             self.parent.to_traditional_chinese = False
             print("繁體翻譯工具已關閉")
         self.parent.save_config_to_traditional_chinese(self.parent.to_traditional_chinese)
+        if os.path.exists('./config'):
+            shutil.rmtree('./config')
 
     def confirm_no_img_changed(self):
         confirm_no_img = self.confirm_no_img_card.isChecked()
@@ -154,6 +156,8 @@ class SettingWidget(QFrame):
         else:
             self.parent.confirm_no_img = False
         self.parent.save_config_confirm_no_img(self.parent.confirm_no_img)
+        if os.path.exists('./config'):
+            shutil.rmtree('./config')
 
 class HomeWidget(QFrame):
 
