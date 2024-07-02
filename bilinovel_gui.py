@@ -363,7 +363,6 @@ class Window(FluentWindow):
         self.confirm_no_img = self.get_config_confirm_no_img()
         self.output_file_type = self.get_config_output_file_type()
         split_str = '*'*40 + '\n'
-        # TODO
         self.welcome_text = f"""使用說明（共 6 條，記得下拉）：
         {split_str}1.嗶哩輕小說 {self.head} (!!!僅支援可以訪問此網站的用戶!!!)，根據書籍網址輸入書號以及下載的卷號，書號最多輸入 4 位阿拉伯數字。
         {split_str}2.例如小說網址是 {self.head}/novel/2117.html，則書號輸入 2117。
