@@ -186,7 +186,7 @@ class Editer(object):
                     self.driver.get(url)
                     partial_next_url = self.driver.execute_script("return ReadParams.url_next;")
                     next_chap_url = self.url_head + partial_next_url
-                    print(f"next url of {url} is {next_chap_url}")
+                    print(f"復原 url [{url}] 的後一章是 [{next_chap_url}]")
                 break
         return text_chap, next_chap_url
     
@@ -295,7 +295,7 @@ class Editer(object):
         self.driver.get(self.volume['chap_urls'][chap_no])
         partial_previous_url = self.driver.execute_script("return ReadParams.url_previous;")
         previous_chap_url = self.url_head + partial_previous_url
-        print(f"previous url of {self.volume['chap_urls'][chap_no]} is {previous_chap_url}")
+        print(f"復原 url [{self.volume['chap_urls'][chap_no]}] 的前一章是 [{previous_chap_url}]")
         return previous_chap_url
     
     def prev_fix_url(self, chap_no, chap_num):  #反向递归修复缺失链接（后修复前），若成功修复返回True，否则返回False 
