@@ -4,13 +4,21 @@
   <img src="resource/bili_logo_modified_big.png" width="200";"/> 
 </p>
 
-## 簡介
-下載**台灣版**嗶哩輕小說書籍 [(https://**tw**.linovelib.com)](https://tw.linovelib.com) 成epub, mobi, pdf, txt...
-
 > [!NOTE]
 > 台灣以外的用戶請確認 必須可以訪問 [(https://**tw**.linovelib.com)](https://tw.linovelib.com) 方可正常運作
 > 
 > 替代使用 [ShqWW/bilinovel-download](https://github.com/ShqWW/bilinovel-download)
+
+<!---
+- [簡介](#簡介)
+- [安裝方法](#安裝方法)
+- [使用方法](#使用方法)
+- [設定](#設定)
+- [鸣谢](#鸣谢)
+-->
+
+## 簡介
+下載**台灣版**嗶哩輕小說書籍 [(https://**tw**.linovelib.com)](https://tw.linovelib.com) 成epub, mobi, pdf, txt...
 
 #### 缺點
 1. **台灣以外的用戶可能無法使用**
@@ -25,10 +33,31 @@
 
 #### Screenshot
 
-![app screenshot 6](resource/app-screenshot6.png)
+![app main screenshot](resource/app-screenshot16.png)
 
 ## 安裝方法
-TODO
+3 種選擇:
+1. **使用 release 頁面的 exe**
+2. **run with python**
+```
+# 2024/07/04 tested with Python 3.11.4 on Windows 11
+git clone https://github.com/sinkboy-chen/tw-bilinovel-downloader.git
+cd tw-bilinovel-downloader
+pip install -r requirements.txt
+python bilinovel_gui.py
+```
+
+3. **pyinstall your own exe**
+```
+# 2024/07/04 tested with Python 3.11.4 on Windows 11
+git clone https://github.com/sinkboy-chen/tw-bilinovel-downloader.git
+cd tw-bilinovel-downloader
+pip install -r requirements.txt
+pip install pyinstaller
+pyinstaller -F -w -i .\resource\bili_logo_modified.png .\bilinovel_gui.py
+# the exe will be in tw-bilinovel-downloader\dist
+```
+
 ### 下載  [calibre](https://calibre-ebook.com/download) (非必要)
 > 若要輸出 epub 以外的檔案格式 (反之可跳過此步驟)
 
