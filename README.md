@@ -21,6 +21,8 @@
 1. 多種檔案格式輸出 (epub, mobi, pdf, txt...)
 1. 可以下載 (陸版) 哔哩轻小说 [(https://**www**.linovelib.com)](https://www.linovelib.com) 刪除的書籍
 
+![app screenshot 6](resource/app-screenshot6.png)
+
 ## 安裝方法
 #### calibre(非必要)
 
