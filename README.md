@@ -5,9 +5,9 @@
 </p>
 
 > [!NOTE]
-> 台灣以外的用戶請確認 必須可以訪問 [(https://**tw**.linovelib.com)](https://tw.linovelib.com) 方可正常運作
+> 台灣以外的用戶請確認 必須可以訪問 [(https://tw.linovelib.com)](https://tw.linovelib.com) 方可正常運作
 > 
-> 替代使用 [ShqWW/bilinovel-download](https://github.com/ShqWW/bilinovel-download)
+> 替代可以使用 [ShqWW/bilinovel-download](https://github.com/ShqWW/bilinovel-download)
 
 <!---
 - [簡介](#簡介)
@@ -18,7 +18,7 @@
 -->
 
 ## 簡介
-下載**台灣版**嗶哩輕小說書籍 [(https://**tw**.linovelib.com)](https://tw.linovelib.com) 成epub, mobi, pdf, txt...
+下載[台灣版嗶哩輕小說](https://tw.linovelib.com) 書籍成 epub, mobi, pdf, txt...
 
 #### 缺點
 1. **台灣以外的用戶可能無法使用**
@@ -37,7 +37,7 @@
 
 ## 安裝方法
 3 種選擇:
-1. **使用 release 頁面的 exe**
+1. **下載 [release 頁面](https://github.com/sinkboy-chen/tw-bilinovel-downloader/releases) 的 exe (建議)**
 2. **run with python**
 ```
 # 2024/07/04 tested with Python 3.11.4 on Windows 11
