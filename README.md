@@ -8,8 +8,9 @@
 下載**台灣版**嗶哩輕小說書籍 [(https://**tw**.linovelib.com)](https://tw.linovelib.com) 成epub, mobi, pdf, txt...
 
 > [!NOTE]
-> 必須可以訪問 [(https://**tw**.linovelib.com)](https://tw.linovelib.com) 方可使用。台灣以外的用戶請確認。
-> 或使用 [ShqWW/bilinovel-download](https://github.com/ShqWW/bilinovel-download)
+> 台灣以外的用戶請確認 必須可以訪問 [(https://**tw**.linovelib.com)](https://tw.linovelib.com) 方可正常運作
+> 
+> 替代使用 [ShqWW/bilinovel-download](https://github.com/ShqWW/bilinovel-download)
 
 #### 缺點
 1. **台灣以外的用戶可能無法使用**
