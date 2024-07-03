@@ -50,7 +50,7 @@ TODO
 ### 輸出檔案
 可選擇 epub, mobi, pdf, txt, azw3, lrf, oeb, pdb, rtf
 
-若選擇 epub 以外的選項，請先 [安裝 calibre 說明](https://github.com/sinkboy-chen/tw-bilinovel-downloader/tree/main?tab=readme-ov-file#%E4%B8%8B%E8%BC%89--calibre-%E9%9D%9E%E5%BF%85%E8%A6%81)
+若選擇 epub 以外的選項，請先 [安裝 calibre 說明](#下載--calibre-非必要)
 
 ### 翻譯成繁體
 取得的文字已是繁體，正常來說不用開啟 (建議Off)
