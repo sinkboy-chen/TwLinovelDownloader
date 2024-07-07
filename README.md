@@ -36,30 +36,33 @@
 ![app main screenshot](resource/app-screenshot16.png)
 
 ## 安裝方法
-3 種選擇:
-1. **下載 [release 頁面](https://github.com/sinkboy-chen/tw-bilinovel-downloader/releases) 的 exe (建議)**
-2. **run with python**
-```
-# 2024/07/04 tested with Python 3.11.4 on Windows 11
-git clone https://github.com/sinkboy-chen/tw-bilinovel-downloader.git
-cd tw-bilinovel-downloader
-pip install -r requirements.txt
-python bilinovel_gui.py
-```
+下載解壓縮 [release](https://github.com/sinkboy-chen/tw-bilinovel-downloader/releases)
 
-3. **pyinstall your own exe**
-```
-# 2024/07/04 tested with Python 3.11.4 on Windows 11
-git clone https://github.com/sinkboy-chen/tw-bilinovel-downloader.git
-cd tw-bilinovel-downloader
-pip install -r requirements.txt
-pip install pyinstaller
-pyinstaller -F -w -i .\resource\bili_logo_modified.png .\bilinovel_gui.py
-# the exe will be in tw-bilinovel-downloader\dist
-```
+若想輸出 epub 以外的檔案格式 下載安裝 [calibre](https://calibre-ebook.com/download) (非必要)
 
-### 下載  [calibre](https://calibre-ebook.com/download) (非必要)
-> 若要輸出 epub 以外的檔案格式 (反之可跳過此步驟)
+<details>
+  <summary>補充 (for developers)</summary>
+  
+  1. **if you want to run with python**
+  ```
+  # 2024/07/04 tested with Python 3.11.4 on Windows 11
+  git clone https://github.com/sinkboy-chen/TwLinovelDownloader.git
+  cd tw-bilinovel-downloader
+  pip install -r requirements.txt
+  python bilinovel_gui.py
+  ```
+
+  2. **if you want to pyinstall your own exe**
+  ```
+  # 2024/07/04 tested with Python 3.11.4 on Windows 11
+  git clone https://github.com/sinkboy-chen/TwLinovelDownloader.git
+  cd tw-bilinovel-downloader
+  pip install -r requirements.txt
+  pip install pyinstaller
+  pyinstaller -F -w -i .\resource\bili_logo_modified.png .\bilinovel_gui.py
+  # the exe will be in tw-bilinovel-downloader\dist
+  ```
+</details>
 
 ## 使用方法
 1. 根據書籍網址輸入書號以及下載的卷號，書號最多輸入 4 位阿拉伯數字。
