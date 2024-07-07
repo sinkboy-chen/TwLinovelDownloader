@@ -75,7 +75,7 @@
 </div>
 
 ### 設定
-![app screenshot 8](resource/app-screenshot8.png)
+<!-- ![app screenshot 8](resource/app-screenshot8.png) -->
 
 - 輸出檔案: 可選擇 epub, mobi, pdf, txt, azw3, lrf, oeb, pdb, rtf
 
