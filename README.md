@@ -36,7 +36,7 @@
 ![app main screenshot](resource/app-screenshot16.png)
 
 ## 安裝方法
-下載解壓縮 [release](https://github.com/sinkboy-chen/tw-bilinovel-downloader/releases)
+下載解壓縮 [release](https://github.com/sinkboy-chen/TwLinovelDownloader/releases)
 
 若想輸出 epub 以外的檔案格式 下載安裝 [calibre](https://calibre-ebook.com/download) (非必要)
 
@@ -47,7 +47,7 @@
   ```
   # 2024/07/04 tested with Python 3.11.4 on Windows 11
   git clone https://github.com/sinkboy-chen/TwLinovelDownloader.git
-  cd tw-bilinovel-downloader
+  cd TwLinovelDownloader
   pip install -r requirements.txt
   python bilinovel_gui.py
   ```
@@ -56,11 +56,11 @@
   ```
   # 2024/07/04 tested with Python 3.11.4 on Windows 11
   git clone https://github.com/sinkboy-chen/TwLinovelDownloader.git
-  cd tw-bilinovel-downloader
+  cd TwLinovelDownloader
   pip install -r requirements.txt
   pip install pyinstaller
   pyinstaller -F -w -i .\resource\bili_logo_modified.png .\bilinovel_gui.py
-  # the exe will be in tw-bilinovel-downloader\dist
+  # the exe will be in TwLinovelDownloader\dist
   ```
 </details>
 
