@@ -79,7 +79,7 @@
 
 - 輸出檔案: 可選擇 epub, mobi, pdf, txt, azw3, lrf, oeb, pdb, rtf
 
-  若選擇 epub 以外的選項，請先 [安裝 calibre 說明](#下載--calibre-非必要)
+  若選擇 epub 以外的選項，請先 [安裝 calibre 說明](#安裝方法)
 
 - 翻譯成繁體: 取得的文字已是繁體，正常來說不用開啟 (建議Off)
 
