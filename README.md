@@ -21,15 +21,15 @@
 下載[台灣版嗶哩輕小說](https://tw.linovelib.com) 書籍成 epub, mobi, pdf, txt...
 
 #### 缺點
-1. **台灣以外的用戶可能無法使用**
+1. 台灣以外的用戶可能無法使用
 1. 繁體
 
 #### 優點
 1. 繁體
-1. **不須程式和指令** (圖形化介面、exe 直接執行)
-1. **不須經常更新軟體** (使用動態爬蟲技術應對網站反爬更新)
-1. **多種檔案格式輸出** (epub, mobi, pdf, txt...)
-1. 可以下載 (陸版) 哔哩轻小说 [(https://**www**.linovelib.com)](https://www.linovelib.com) 刪除的書籍
+1. 不須程式和指令 (圖形化介面、exe 直接執行)
+1. 不須經常更新軟體 (使用動態爬蟲技術應對網站反爬更新)
+1. 多種檔案格式輸出 (epub, mobi, pdf, txt...)
+1. 可以下載 (陸版) 哔哩轻小说 [(https://www.linovelib.com)](https://www.linovelib.com) 刪除的書籍
 
 #### Screenshot
 
@@ -44,7 +44,7 @@
 <details>
   <summary>補充 (for developers)</summary>
   
-  1. **if you want to run with python**
+  1. if you want to run with python
   ```
   # 2024/07/04 tested with Python 3.11.4 on Windows 11
   git clone https://github.com/sinkboy-chen/TwLinovelDownloader.git
@@ -53,7 +53,7 @@
   python bilinovel_gui.py
   ```
 
-  2. **if you want to pyinstall your own exe**
+  2. if you want to pyinstall your own exe
   ```
   # 2024/07/04 tested with Python 3.11.4 on Windows 11
   git clone https://github.com/sinkboy-chen/TwLinovelDownloader.git
