@@ -257,7 +257,7 @@ class Editer(object):
                 signal.emit(signal_msg)
         except Exception as e:
             print(e)
-            print('沒有封面圖片，請自行用第三方EPUB編輯器手動新增封面')
+            print('沒有封面圖片，請自行用第三方EPUB編輯工具手動新增封面')
         img_htmls = get_cover_html(img_w, img_h)
         with open(textfile, 'w+', encoding='utf-8') as f:
             f.writelines(img_htmls)

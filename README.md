@@ -1,4 +1,4 @@
-# (台版)嗶哩輕小說下載器
+# (台版)嗶哩輕小說下載工具
 
 <p align="center">
   <img src="resource/logo_big.png" width="200";"/> 

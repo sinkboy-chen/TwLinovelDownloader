@@ -536,7 +536,7 @@ class Window(FluentWindow):
         pixmap = QPixmap()
         pixmap.loadFromData(base64.b64decode(logo_base64))
         self.setWindowIcon(QIcon(pixmap))
-        self.setWindowTitle('嗶哩輕小說下載器')
+        self.setWindowTitle('嗶哩輕小說下載工具')
         self.setFont(font_label)
 
         desktop = QApplication.desktop().availableGeometry()
