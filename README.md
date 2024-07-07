@@ -59,7 +59,7 @@
   cd TwLinovelDownloader
   pip install -r requirements.txt
   pip install pyinstaller
-  pyinstaller -D -w -i .\resource\logo.png .\bilinovel_gui.py
+  pyinstaller -D -w -i .\resource\logo.png .\bilinovel_gui.py --name Linovel
   # the exe will be in TwLinovelDownloader\dist
   ```
 </details>
