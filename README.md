@@ -1,7 +1,7 @@
 # (台版)嗶哩輕小說下載器
 
 <p align="center">
-  <img src="resource/bili_logo_modified_big.png" width="200";"/> 
+  <img src="resource/logo_big.png" width="200";"/> 
 </p>
 
 > [!NOTE]
@@ -59,7 +59,7 @@
   cd TwLinovelDownloader
   pip install -r requirements.txt
   pip install pyinstaller
-  pyinstaller -F -w -i .\resource\bili_logo_modified.png .\bilinovel_gui.py
+  pyinstaller -D -w -i .\resource\logo.png .\bilinovel_gui.py
   # the exe will be in TwLinovelDownloader\dist
   ```
 </details>
