@@ -1,5 +1,3 @@
-# (台版)嗶哩輕小說下載工具
-
 <p align="center">
   <img src="resource/logo_big.png" width="200";"/> 
 </p>
@@ -18,22 +16,21 @@
 -->
 
 ## 簡介
-下載[台灣版嗶哩輕小說](https://tw.linovelib.com) 書籍成 epub, mobi, pdf, txt...
+簡易使用的嗶哩輕小說下載工具 [TwLinovelDownloader]( https://github.com/sinkboy-chen/TwLinovelDownloader/releases)
 
-#### 缺點
-1. 台灣以外的用戶可能無法使用
-1. 繁體
+- 缺點
+  - 繁體
+  - 台灣以外的用戶可能無法使用
+  
+- 優點
+  - 繁體
+  - 不須程式和指令 (圖形化介面、exe 直接執行)
+  - 不須經常更新軟體 (使用動態爬蟲技術應對網站反爬更新)
+  - 多種檔案格式輸出 (epub, mobi, pdf, txt...)
+  - 可以下載 (陸版) 哔哩轻小说 [(https://www.linovelib.com)](https://www.linovelib.com) 刪除的書籍
 
-#### 優點
-1. 繁體
-1. 不須程式和指令 (圖形化介面、exe 直接執行)
-1. 不須經常更新軟體 (使用動態爬蟲技術應對網站反爬更新)
-1. 多種檔案格式輸出 (epub, mobi, pdf, txt...)
-1. 可以下載 (陸版) 哔哩轻小说 [(https://www.linovelib.com)](https://www.linovelib.com) 刪除的書籍
-
-#### Screenshot
-
-![app main screenshot](resource/app-screenshot16.png)
+- Screenshot
+  ![app main screenshot](resource/app-screenshot16.png)
 
 ## 安裝方法
 1. 下載解壓縮 Linovel-vX.X.zip [release](https://github.com/sinkboy-chen/TwLinovelDownloader/releases)
@@ -77,21 +74,18 @@
   <img src="resource/app-screenshot13.png" width="400"/>
 </div>
 
-## 設定
+### 設定
 ![app screenshot 8](resource/app-screenshot8.png)
 
-### 輸出檔案
-可選擇 epub, mobi, pdf, txt, azw3, lrf, oeb, pdb, rtf
+- 輸出檔案: 可選擇 epub, mobi, pdf, txt, azw3, lrf, oeb, pdb, rtf
 
-若選擇 epub 以外的選項，請先 [安裝 calibre 說明](#下載--calibre-非必要)
+  若選擇 epub 以外的選項，請先 [安裝 calibre 說明](#下載--calibre-非必要)
 
-### 翻譯成繁體
-取得的文字已是繁體，正常來說不用開啟 (建議Off)
+- 翻譯成繁體: 取得的文字已是繁體，正常來說不用開啟 (建議Off)
 
-### 插圖頁面不存在時
-插圖頁面不存在時是否要手動添加插圖頁面章節 (建議Off)
+- 插圖頁面不存在時: 插圖頁面不存在時是否要手動添加插圖頁面章節 (建議Off)
 
-## credits
+## Credits
 - 本项目的初始源代码来自 [ShqWW/bilinovel-download](https://github.com/ShqWW/bilinovel-download) 仓库。
 - [calibre ebook-convert](https://calibre-ebook.com/download)
 - [stoneapptech/epub_convert](https://github.com/stoneapptech/epub_convert)
