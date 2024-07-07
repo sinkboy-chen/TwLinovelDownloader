@@ -370,6 +370,7 @@ class Window(FluentWindow):
         {split_str}4.根據上一步回傳的資訊決定自己想下載的卷號，若要下載編號[2]對應卷，卷號輸入 2。想下載多卷例如[1]至[3]對應卷，卷號輸入 1-3 或 1,2,3（英文逗號分隔，編號可以不連續）並點選確定。
         {split_str}5.至設定頁面: 更改輸出檔案格式 (epub,mobi,txt,pdf..)、開啟/關閉功能。
         {split_str}6.若選擇 epub 以外的檔案格式，需安裝 https://calibre-ebook.com/download，且安裝資料夾路徑在環境變數中。
+        {split_str}https://github.com/sinkboy-chen/TwLinovelDownloader
         """
         self.homeInterface = HomeWidget('Home Interface', self)
         self.settingInterface = SettingWidget('Setting Interface', self)
