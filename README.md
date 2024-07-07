@@ -91,9 +91,13 @@
 ### 插圖頁面不存在時
 插圖頁面不存在時是否要手動添加插圖頁面章節 (建議Off)
 
-## 鸣谢
+## credits
 - 本项目的初始源代码来自 [ShqWW/bilinovel-download](https://github.com/ShqWW/bilinovel-download) 仓库。
 - [calibre ebook-convert](https://calibre-ebook.com/download)
 - [stoneapptech/epub_convert](https://github.com/stoneapptech/epub_convert)
 
 有任何bug、建議可以提 issue or pull request
+
+獻給保羅、魯迪烏斯和&nbsp;&nbsp;&nbsp;洛琪希
+
+20240707
