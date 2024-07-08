@@ -40,7 +40,7 @@ class Editer(object):
         options = Options()
         options.add_argument('--start-minimized')
         # the below argument makes Edge driver run on background and won't show, comment it when debugging
-        options.add_argument("--headless=new")
+        # options.add_argument("--headless=new")
         # options.add_argument("--lang=zh-CN")
 
         self.driver = webdriver.Edge(options = options)

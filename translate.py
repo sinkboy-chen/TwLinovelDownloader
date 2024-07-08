@@ -1,5 +1,5 @@
 """
-This module provides functions to translate .epub from Simplified Chinese to Traditional Chinese.
+This module provides functions to translate .epub from Traditional Chinese to Simplified Chinese.
 
 Original source: stoneapptech/epub_convert/convert.py
 Source URL: https://github.com/stoneapptech/epub_convert/blob/master/convert.py
@@ -13,7 +13,7 @@ import opencc
 from pathlib import Path
 
 # only initailize OpenCC once, or it would be very slow
-converter = opencc.OpenCC(config="s2tw.json")
+converter = opencc.OpenCC(config="tw2s.json")
 
 def convert_epub(epub, output=None):
     target_filetype = ["htm", "html", "xhtml", "ncx", "opf"]
@@ -66,7 +66,7 @@ def translate_epub_with_path(epub_path):
         output_fn = s2t(filename)
 
     t = time.time()
-    print(f"正在翻譯成繁體 {epub_path}......")
+    print(f"正在翻譯成簡體 {epub_path}......")
     buffer = BytesIO()
     output = convert_epub(epub_path, buffer)
     with open(Path.joinpath(directory, output_fn), "wb") as f:

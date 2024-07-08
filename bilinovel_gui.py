@@ -38,7 +38,7 @@ class MainThread(QThread):
                 self.parent.progressring_signal,
                 self.parent.cover_signal,
                 self.parent.editline_hang,
-                self.parent.parent.to_traditional_chinese,
+                self.parent.parent.to_simplified_chinese,
                 self.parent.parent.confirm_no_img,
                 self.parent.parent.output_file_type
             )
@@ -83,8 +83,8 @@ class SettingWidget(QFrame):
         self.outputFileTypeMode = OptionsConfigItem(
             None, "outputFileTypeMode", find_format(self.parent.output_file_type), OptionsValidator(OutputFormat))
 
-        self.toTraditionalChineseMode = OptionsConfigItem(
-        None, "ToTraditionalChineseMode", self.parent.to_traditional_chinese, BoolValidator())
+        self.toSimplifiedChineseMode = OptionsConfigItem(
+        None, "ToSimplifiedChineseMode", self.parent.to_simplified_chinese, BoolValidator())
 
         self.confirmNoImgMode = OptionsConfigItem(
         None, "ConfirmNoImgMode", self.parent.confirm_no_img, BoolValidator())
@@ -113,11 +113,11 @@ class SettingWidget(QFrame):
             parent=self.parent
         )
 
-        self.to_traditional_chinese_card = SwitchSettingCard(
+        self.to_simplified_chinese_card = SwitchSettingCard(
             FIF.LANGUAGE,
-            self.tr('翻譯成繁體'),
+            self.tr('翻譯成簡體'),
             self.tr("工具"),
-            self.toTraditionalChineseMode,
+            self.toSimplifiedChineseMode,
             self.parent
         )
 
@@ -132,7 +132,7 @@ class SettingWidget(QFrame):
         self.setting_group.addSettingCard(self.download_path_card)
         self.setting_group.addSettingCard(self.theme_card)
         self.setting_group.addSettingCard(self.output_file_type_card)
-        self.setting_group.addSettingCard(self.to_traditional_chinese_card)
+        self.setting_group.addSettingCard(self.to_simplified_chinese_card)
         self.setting_group.addSettingCard(self.confirm_no_img_card)
         self.expandLayout.setSpacing(28)
         self.expandLayout.setContentsMargins(20, 10, 20, 0)
@@ -140,7 +140,7 @@ class SettingWidget(QFrame):
 
         self.download_path_card.clicked.connect(self.download_path_changed)
         self.theme_card.optionChanged.connect(self.theme_changed)
-        self.to_traditional_chinese_card.checkedChanged.connect(self.to_traditional_chinese_changed)
+        self.to_simplified_chinese_card.checkedChanged.connect(self.to_simplified_chinese_changed)
         self.outputFileTypeMode.valueChanged.connect(self.output_file_type_changed)
         self.confirm_no_img_card.checkedChanged.connect(self.confirm_no_img_changed)
 
@@ -159,15 +159,15 @@ class SettingWidget(QFrame):
         self.parent.output_file_type = self.outputFileTypeMode.value.value
         self.parent.save_config_output_file_type(self.parent.output_file_type)
 
-    def to_traditional_chinese_changed(self):
-        to_traditional_chinese = self.to_traditional_chinese_card.isChecked()
-        if to_traditional_chinese:
-            self.parent.to_traditional_chinese = True
-            print("繁體翻譯工具已開啟")
+    def to_simplified_chinese_changed(self):
+        to_simplified_chinese = self.to_simplified_chinese_card.isChecked()
+        if to_simplified_chinese:
+            self.parent.to_simplified_chinese = True
+            print("簡體翻譯工具已開啟")
         else:
-            self.parent.to_traditional_chinese = False
-            print("繁體翻譯工具已關閉")
-        self.parent.save_config_to_traditional_chinese(self.parent.to_traditional_chinese)
+            self.parent.to_simplified_chinese = False
+            print("簡體翻譯工具已關閉")
+        self.parent.save_config_to_simplified_chinese(self.parent.to_simplified_chinese)
 
     def confirm_no_img_changed(self):
         confirm_no_img = self.confirm_no_img_card.isChecked()
@@ -359,7 +359,7 @@ class Window(FluentWindow):
         self.head = 'https://tw.linovelib.com'
         self.config_path = os.path.join(os.path.expanduser('~'), '.bilinovel.conf')
         self.out_path = self.get_config_out_path()
-        self.to_traditional_chinese = self.get_config_to_traditional_chinese()
+        self.to_simplified_chinese = self.get_config_to_simplified_chinese()
         self.confirm_no_img = self.get_config_confirm_no_img()
         self.output_file_type = self.get_config_output_file_type()
         split_str = '*'*40 + '\n'
@@ -419,25 +419,25 @@ class Window(FluentWindow):
                 config.write(configfile)
         return output_file_type
     
-    def get_config_to_traditional_chinese(self):
+    def get_config_to_simplified_chinese(self):
         """
-        get to_traditional_chinese variable from config file, else use default
+        get to_simplified_chinese variable from config file, else use default
         
             Returns:
-                to_traditional_chinese (bool)
+                to_simplified_chinese (bool)
         """
         config = configparser.ConfigParser()
         config.read(self.config_path)
         try:
-            to_traditional_chinese = config.getboolean('Settings', 'to_traditional_chinese')
+            to_simplified_chinese = config.getboolean('Settings', 'to_simplified_chinese')
         except:
             if not config.has_section('Settings'):
                 config.add_section('Settings')
-            to_traditional_chinese = False
-            config.set('Settings', 'to_traditional_chinese', 'false')
+            to_simplified_chinese = False
+            config.set('Settings', 'to_simplified_chinese', 'false')
             with open(self.config_path, "w") as configfile:
                 config.write(configfile)
-        return to_traditional_chinese
+        return to_simplified_chinese
     
     def get_config_confirm_no_img(self):
         """
@@ -459,19 +459,19 @@ class Window(FluentWindow):
                 config.write(configfile)
         return confirm_no_img
 
-    def save_config_to_traditional_chinese(self, to_traditional_chinese):
+    def save_config_to_simplified_chinese(self, to_simplified_chinese):
         """
-        save to_traditional_chinese variable to config file
+        save to_simplified_chinese variable to config file
         """
         config = configparser.ConfigParser()
         config.read(self.config_path)
         if not config.has_section('Settings'):
             config.add_section('Settings')
 
-        if to_traditional_chinese:
-            config.set('Settings', 'to_traditional_chinese', 'true')
+        if to_simplified_chinese:
+            config.set('Settings', 'to_simplified_chinese', 'true')
         else:
-            config.set('Settings', 'to_traditional_chinese', 'false')
+            config.set('Settings', 'to_simplified_chinese', 'false')
         
         with open(self.config_path, "w") as configfile:
             config.write(configfile)

@@ -41,7 +41,7 @@ def download_single_volume(root_path,
                            progressring_signal=None,
                            cover_signal=None,
                            edit_line_hang=None,
-                           to_traditional_chinese=False,
+                           to_simplified_chinese=False,
                            confirm_no_img=True,
                            output_file_type="epub"):
     editer = Editer(root_path=root_path, book_no=book_no, volume_no=volume_no, confirm_no_img=confirm_no_img)
@@ -81,7 +81,7 @@ def download_single_volume(root_path,
     translate_success = -1
     convert_success = -1
 
-    if to_traditional_chinese:
+    if to_simplified_chinese:
         translate_success, epub_new_file = translate_epub_with_path(epub_file)
         if translate_success:
             os.remove(epub_file)
@@ -110,7 +110,7 @@ def downloader_router(root_path,
                       progressring_signal=None,
                       cover_signal=None,
                       edit_line_hang=None,
-                      to_traditional_chinese=False,
+                      to_simplified_chinese=False,
                       confirm_no_img=True,
                       output_file_type="epub"):
     is_multi_chap = False
@@ -146,10 +146,10 @@ def downloader_router(root_path,
             return
     if is_multi_chap:
         for volume_no in volume_no_list:
-            download_single_volume(root_path, book_no, volume_no, is_gui, hang_signal, progressring_signal, cover_signal, edit_line_hang, to_traditional_chinese, confirm_no_img, output_file_type)
+            download_single_volume(root_path, book_no, volume_no, is_gui, hang_signal, progressring_signal, cover_signal, edit_line_hang, to_simplified_chinese, confirm_no_img, output_file_type)
         print('所有下載任務都已經完成！')
     else:
-        download_single_volume(root_path, book_no, volume_no, is_gui, hang_signal, progressring_signal, cover_signal, edit_line_hang, to_traditional_chinese, confirm_no_img, output_file_type)
+        download_single_volume(root_path, book_no, volume_no, is_gui, hang_signal, progressring_signal, cover_signal, edit_line_hang, to_simplified_chinese, confirm_no_img, output_file_type)
     
 if __name__=='__main__':
     args = parse_args()
