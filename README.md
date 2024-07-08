@@ -26,6 +26,7 @@
   - 不須經常更新軟體 (使用動態爬蟲技術應對網站反爬更新)
   - 多種檔案格式輸出 (epub, mobi, pdf, txt...)
   - 可以下載 (陸版) 哔哩轻小说 [(https://www.linovelib.com)](https://www.linovelib.com) 刪除的書籍
+  - 翻譯成簡體功能
 
 - Screenshot
   ![app main screenshot](resource/app-screenshot16.png)
