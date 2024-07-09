@@ -42,7 +42,7 @@ def download_single_volume(root_path,
                            cover_signal=None,
                            edit_line_hang=None,
                            to_simplified_chinese=False,
-                           confirm_no_img=True,
+                           confirm_no_img=False,
                            output_file_type="epub"):
     editer = Editer(root_path=root_path, book_no=book_no, volume_no=volume_no, confirm_no_img=confirm_no_img)
     print('正在獲取書籍資訊....')
@@ -111,7 +111,7 @@ def downloader_router(root_path,
                       cover_signal=None,
                       edit_line_hang=None,
                       to_simplified_chinese=False,
-                      confirm_no_img=True,
+                      confirm_no_img=False,
                       output_file_type="epub"):
     is_multi_chap = False
     if len(book_no)==0:

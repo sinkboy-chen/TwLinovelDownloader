@@ -453,7 +453,7 @@ class Window(FluentWindow):
         except:
             if not config.has_section('Settings'):
                 config.add_section('Settings')
-            confirm_no_img = True
+            confirm_no_img = False
             config.set('Settings', 'confirm_no_img', 'true')
             with open(self.config_path, "w") as configfile:
                 config.write(configfile)

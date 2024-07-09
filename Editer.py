@@ -23,7 +23,7 @@ from selenium.webdriver.common.by import By
 lock = threading.RLock()
 
 class Editer(object):
-    def __init__(self, root_path, head='https://tw.linovelib.com', book_no='0000', volume_no=1, confirm_no_img=True):
+    def __init__(self, root_path, head='https://tw.linovelib.com', book_no='0000', volume_no=1, confirm_no_img=False):
         
         self.header = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.67 Safari/537.36 Edg/87.0.664.47',
