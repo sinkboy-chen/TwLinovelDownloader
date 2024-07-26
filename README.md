@@ -2,11 +2,6 @@
   <img src="resource/logo_big.png" width="200";"/> 
 </p>
 
-> [!NOTE]
-> 台灣以外的用戶請確認 必須可以訪問 [(https://tw.linovelib.com)](https://tw.linovelib.com) 方可正常運作
-> 
-> 替代可以使用 [ShqWW/bilinovel-download](https://github.com/ShqWW/bilinovel-download)
-
 <!---
 - [簡介](#簡介)
 - [安裝方法](#安裝方法)
@@ -17,16 +12,13 @@
 
 ## 簡介
 簡易使用的嗶哩輕小說下載工具 [TwLinovelDownloader]( https://github.com/sinkboy-chen/TwLinovelDownloader/releases)
-
-- 缺點
-  - 台灣以外的用戶可能無法使用
   
-- 優點
-  - 不須程式和指令 (圖形化介面、exe 直接執行)
-  - 不須經常更新軟體 (使用動態爬蟲技術應對網站反爬更新)
-  - 多種檔案格式輸出 (epub, mobi, pdf, txt...)
-  - 可以下載 (陸版) 哔哩轻小说 [(https://www.linovelib.com)](https://www.linovelib.com) 刪除的書籍
+- 特色
+  - 圖形化介面
+  - 下載陸版哔哩轻小说 [(https://www.linovelib.com)](https://www.linovelib.com) 刪除的書籍
+  - 多種輸出檔案格式 (epub, mobi, pdf, txt...)
   - 翻譯成簡體功能
+  - 不須經常更新軟體 (使用動態爬蟲技術應對網站反爬更新)
 
 - Screenshot
   ![app main screenshot](resource/app-screenshot16.png)
