@@ -24,10 +24,11 @@
   ![app main screenshot](resource/app-screenshot16.png)
 
 ## 安裝方法
-1. 下載解壓縮 Linovel-vX.X.zip [release](https://github.com/sinkboy-chen/TwLinovelDownloader/releases)
+1. 下載 [release](https://github.com/sinkboy-chen/TwLinovelDownloader/releases) 中的 Linovel-vX.X.zip
+1. 解壓縮 Linovel-vX.X.zip 
 ![decompress screenshot](resource/decompress2.png)
 
-2. 若想輸出 epub 以外的檔案格式 下載安裝 [calibre](https://calibre-ebook.com/download) (非必要)
+1. (非必要) 若想輸出 epub 以外的檔案格式 請下載安裝 [calibre](https://calibre-ebook.com/download) 
 
 <details>
   <summary>補充 (for developers)</summary>
