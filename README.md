@@ -2,12 +2,15 @@
   <img src="resource/logo_big.png" width="200";"/> 
 </p>
 
-<!---
+[![Status](https://img.shields.io/badge/status-maintenance-ffd700.svg)]()
+[![Downloads](https://img.shields.io/github/downloads/sinkboy-chen/TWLinovelDownloader/total.svg)](https://github.com/sinkboy-chen/TWLinovelDownloader/releases)
+[![Release](https://img.shields.io/github/release/sinkboy-chen/TWLinovelDownloader.svg)](https://github.com/sinkboy-chen/TWLinovelDownloader/releases)
+
+<!--
 - [簡介](#簡介)
 - [安裝方法](#安裝方法)
 - [使用方法](#使用方法)
-- [設定](#設定)
-- [鸣谢](#鸣谢)
+- [Credits](#credits)
 -->
 
 ## 簡介
