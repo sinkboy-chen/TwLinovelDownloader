@@ -14,11 +14,11 @@
 簡易使用的嗶哩輕小說下載工具 [TwLinovelDownloader]( https://github.com/sinkboy-chen/TwLinovelDownloader/releases)
   
 - 特色
-  - 圖形化介面
-  - 下載陸版哔哩轻小说 [(https://www.linovelib.com)](https://www.linovelib.com) 刪除的書籍
-  - 多種輸出檔案格式 (epub, mobi, pdf, txt...)
-  - 翻譯成簡體功能
-  - 不須經常更新軟體 (使用動態爬蟲技術應對網站反爬更新)
+  - 圖形化介面，不需程式
+  - 多種檔案格式輸出 (epub, mobi, pdf, txt...)
+  - 簡體 / 繁體 輸出
+  - 可以下載陸版哔哩轻小说 [(https://www.linovelib.com)](https://www.linovelib.com) 刪除的書籍
+  - 無亂碼
 
 - Screenshot
   ![app main screenshot](resource/app-screenshot16.png)
