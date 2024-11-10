@@ -2,7 +2,7 @@
   <img src="resource/logo_big.png" width="200";"/> 
 </p>
 
-[![Status](https://img.shields.io/badge/status-maintenance-ffd700.svg)]()
+[![Status](https://img.shields.io/badge/status-broken-red.svg)]()
 [![Downloads](https://img.shields.io/github/downloads/sinkboy-chen/TWLinovelDownloader/total.svg)](https://github.com/sinkboy-chen/TWLinovelDownloader/releases)
 [![Release](https://img.shields.io/github/release/sinkboy-chen/TWLinovelDownloader.svg)](https://github.com/sinkboy-chen/TWLinovelDownloader/releases)
 
